@@ -1,5 +1,7 @@
 package com.example.managementsystem.entity;
 
+import com.example.managementsystem.entity.dto.ManagerDto;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,6 +19,14 @@ public class Manager {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "manager_id")
     private Set<Employee> employees = new HashSet<>();
+
+    public Manager(String name) {
+        this.name =name;
+    }
+
+    public Manager() {
+
+    }
 
     public Long getId() {
         return id;
@@ -49,4 +59,6 @@ public class Manager {
     public void removeEmployee(Employee employee){
         employees.remove(employee);
     }
+
+
 }

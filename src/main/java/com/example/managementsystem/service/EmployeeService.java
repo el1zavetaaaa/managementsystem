@@ -1,13 +1,16 @@
 package com.example.managementsystem.service;
 
 import com.example.managementsystem.entity.Employee;
+import com.example.managementsystem.entity.SaveEmployeeRequest;
+import com.example.managementsystem.entity.EmployeeResponse;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface EmployeeService {
-    Employee saveEmployee(Employee employee);
+    EmployeeResponse saveEmployee(SaveEmployeeRequest saveEmployeeRequest);
     List<Employee> getAllEmployees();
-    Employee getEmployeeById(Long id);
-    Employee updateEmployee(Employee employee, Long id);
-    void deleteEmployee(Long id);
+    Optional <EmployeeResponse> getEmployeeById(Long id);
+    void updateEmployee(Long id, SaveEmployeeRequest saveEmployeeRequest);
+    Optional<EmployeeResponse> deleteEmployee(Long id);
 }
