@@ -61,9 +61,8 @@ public class ManagerController {
     }
 
     @DeleteMapping(value = "/{managerId}/employees/{emploeeId}/remove")
-    public ResponseEntity<ManagerDto> removeEmployeeFromManager(@PathVariable final Long managerId,
+    public void removeEmployeeFromManager(@PathVariable final Long managerId,
                                                                 @PathVariable final Long emploeeId) {
         Manager manager = managerService.removeEmployee(managerId, emploeeId);
-        return new ResponseEntity<>(ManagerDto.printManagerFromDb(manager), HttpStatus.OK);
     }
 }

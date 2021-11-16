@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>project</artifactId>
+	<artifactId>managementSystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>project</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Final project for NIX!</description>
 	<properties>
 		<java.version>11</java.version>
 		<junit.version>5.7.1</junit.version>
@@ -128,6 +128,7 @@
                 </configuration>
             </plugin>
         </plugins>
+		<finalName>managementSystem</finalName>
 	</build>
 
 </project>
