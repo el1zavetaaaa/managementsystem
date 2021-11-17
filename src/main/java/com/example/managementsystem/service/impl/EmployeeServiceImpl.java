@@ -19,6 +19,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
     @Override
     public EmployeeResponse saveEmployee(SaveEmployeeRequest request) {
         var employee = new Employee(request.firstName(),request.lastName(),request.email());

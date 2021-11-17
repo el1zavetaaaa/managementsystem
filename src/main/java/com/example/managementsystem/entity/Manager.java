@@ -24,6 +24,11 @@ public class Manager {
         this.name =name;
     }
 
+    public Manager(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Manager() {
 
     }
@@ -53,12 +58,13 @@ public class Manager {
     }
 
     public void addEmployee(Employee employee){
-        employees.add(employee);
+        this.employees.add(employee);
     }
 
     public void removeEmployee(Employee employee){
         employees.remove(employee);
     }
+
 
 
 }

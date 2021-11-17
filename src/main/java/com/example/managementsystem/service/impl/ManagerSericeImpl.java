@@ -20,6 +20,10 @@ public class ManagerSericeImpl implements ManagerService {
     @Autowired
     private ManagerRepository managerRepository;
 
+    public ManagerSericeImpl(ManagerRepository managerRepository) {
+        this.managerRepository = managerRepository;
+    }
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
