@@ -1,8 +1,8 @@
 package com.example.managementsystem.service;
 
-import com.example.managementsystem.entity.Manager;
-import com.example.managementsystem.entity.ManagerResponse;
-import com.example.managementsystem.entity.SaveManagerRequest;
+import com.example.managementsystem.model.entity.Manager;
+import com.example.managementsystem.model.request.SaveManagerRequest;
+import com.example.managementsystem.model.response.ManagerResponse;
 import com.example.managementsystem.repository.ManagerRepository;
 import com.example.managementsystem.service.impl.ManagerSericeImpl;
 import org.junit.jupiter.api.BeforeEach;

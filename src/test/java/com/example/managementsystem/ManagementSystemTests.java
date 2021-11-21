@@ -1,10 +1,12 @@
 package com.example.managementsystem;
 
-import com.example.managementsystem.entity.EmployeeResponse;
-import com.example.managementsystem.entity.ManagerResponse;
-import com.example.managementsystem.entity.SaveEmployeeRequest;
-import com.example.managementsystem.entity.SaveManagerRequest;
+import com.example.managementsystem.model.request.SaveEmployeeRequest;
+import com.example.managementsystem.model.request.SaveManagerRequest;
+import com.example.managementsystem.model.response.EmployeeResponse;
+import com.example.managementsystem.model.response.ManagerResponse;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -23,6 +25,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles({"h2db", "debug"})
 class ManagementSystemTests {
+
+    private static final Logger log = LoggerFactory.getLogger(ManagementSystemTests.class);
 
     @Autowired
     private TestRestTemplate rest;
@@ -44,6 +48,7 @@ class ManagementSystemTests {
         assertNotNull(responseBody);
         assertEquals(name, responseBody.name());
         assertNotNull(responseBody.id());
+        log.info("Test manager with name {} was successfully created!",name);
     }
 
 
@@ -94,6 +99,8 @@ class ManagementSystemTests {
         assertNotNull(responseBody);
         assertEquals(updatedName, responseBody.name());
         assertEquals(id, responseBody.id());
+
+        log.info("Test Manager was successfully updated! His/Her new name is {}!",updatedName);
     }
 
     @Test
@@ -122,6 +129,7 @@ class ManagementSystemTests {
         assertEquals(HttpStatus.NOT_FOUND, rest
                 .exchange(RequestEntity.delete(managerUrl).build(), ManagerResponse.class)
                 .getStatusCode());
+        log.warn("Test Manager with id {} was deleted.",id);
     }
 
     @Test
@@ -140,6 +148,7 @@ class ManagementSystemTests {
         assertEquals(lastName, responseBody.lastName());
         assertEquals(email, responseBody.email());
         assertNotNull(responseBody.id());
+        log.info("Test Employee with email {} was successfully created!",email);
     }
 
     @Test
@@ -183,11 +192,11 @@ class ManagementSystemTests {
 
         var employeeUrl = baseUrlForGettingEmployeeById(id);
 
-        var updatedfirstName = "test update employee first name";
-        var updatedlastName = "test update employee last name";
-        var updatedemail = "test update employee email";
+        var updatedFirstName = "test update employee first name";
+        var updatedLastName = "test update employee last name";
+        var updatedEmail = "test update employee email";
 
-        rest.put(employeeUrl, new SaveEmployeeRequest(updatedfirstName, updatedlastName, updatedemail));
+        rest.put(employeeUrl, new SaveEmployeeRequest(updatedFirstName, updatedLastName, updatedEmail));
 
         ResponseEntity<EmployeeResponse> employeeResponseEntity = rest.getForEntity(employeeUrl, EmployeeResponse.class);
         assertEquals(HttpStatus.OK, employeeResponseEntity.getStatusCode());
@@ -195,10 +204,12 @@ class ManagementSystemTests {
 
         EmployeeResponse responseBody = employeeResponseEntity.getBody();
         assertNotNull(responseBody);
-        assertEquals(updatedfirstName, responseBody.firstName());
-        assertEquals(updatedlastName, responseBody.lastName());
-        assertEquals(updatedemail, responseBody.email());
+        assertEquals(updatedFirstName, responseBody.firstName());
+        assertEquals(updatedLastName, responseBody.lastName());
+        assertEquals(updatedEmail, responseBody.email());
         assertEquals(id, responseBody.id());
+
+        log.info("Test Employee was successfully updated! His/her new email is {}!",email);
     }
 
     @Test
@@ -231,6 +242,8 @@ class ManagementSystemTests {
         assertEquals(HttpStatus.NOT_FOUND, rest
                 .exchange(RequestEntity.delete(employeeUrl).build(), EmployeeResponse.class)
                 .getStatusCode());
+
+        log.warn("Test Employee with id {} was deleted",id);
     }
 
     private ResponseEntity<ManagerResponse> createManager(String name) {

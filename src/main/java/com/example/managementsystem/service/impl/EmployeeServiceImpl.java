@@ -1,8 +1,8 @@
 package com.example.managementsystem.service.impl;
 
-import com.example.managementsystem.entity.*;
-import com.example.managementsystem.entity.EmployeeResponse;
-import com.example.managementsystem.exception.ResourceNotFoundException;
+import com.example.managementsystem.model.entity.Employee;
+import com.example.managementsystem.model.request.SaveEmployeeRequest;
+import com.example.managementsystem.model.response.EmployeeResponse;
 import com.example.managementsystem.repository.EmployeeRepository;
 import com.example.managementsystem.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +25,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeResponse saveEmployee(SaveEmployeeRequest request) {
-        var employee = new Employee(request.firstName(),request.lastName(),request.email());
+        var employee = new Employee(request.firstName(), request.lastName(), request.email());
         return EmployeeResponse.fromEmployee(employeeRepository.save(employee));
     }
+
     @Override
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
@@ -54,4 +55,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.ifPresent(employeeRepository::delete);
         return employee.map(EmployeeResponse::fromEmployee);
     }
+
+
 }

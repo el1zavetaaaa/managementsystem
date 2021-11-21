@@ -1,6 +1,4 @@
-package com.example.managementsystem.entity;
-
-import com.example.managementsystem.entity.dto.ManagerDto;
+package com.example.managementsystem.model.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -21,7 +19,7 @@ public class Manager {
     private Set<Employee> employees = new HashSet<>();
 
     public Manager(String name) {
-        this.name =name;
+        this.name = name;
     }
 
     public Manager(Long id, String name) {
@@ -57,14 +55,13 @@ public class Manager {
         this.employees = employees;
     }
 
-    public void addEmployee(Employee employee){
+    public void addEmployee(Employee employee) {
         this.employees.add(employee);
     }
 
-    public void removeEmployee(Employee employee){
+    public void removeEmployee(Employee employee) {
         employees.remove(employee);
     }
-
 
 
 }

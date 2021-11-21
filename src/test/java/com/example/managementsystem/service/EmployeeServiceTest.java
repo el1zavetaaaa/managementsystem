@@ -1,8 +1,8 @@
 package com.example.managementsystem.service;
 
-import com.example.managementsystem.entity.Employee;
-import com.example.managementsystem.entity.EmployeeResponse;
-import com.example.managementsystem.entity.SaveEmployeeRequest;
+import com.example.managementsystem.model.entity.Employee;
+import com.example.managementsystem.model.request.SaveEmployeeRequest;
+import com.example.managementsystem.model.response.EmployeeResponse;
 import com.example.managementsystem.repository.EmployeeRepository;
 import com.example.managementsystem.service.impl.EmployeeServiceImpl;
 import org.junit.jupiter.api.BeforeEach;

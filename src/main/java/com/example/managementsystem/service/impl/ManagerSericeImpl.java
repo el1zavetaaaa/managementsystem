@@ -1,9 +1,11 @@
 package com.example.managementsystem.service.impl;
 
-import com.example.managementsystem.entity.*;
+import com.example.managementsystem.model.entity.Employee;
+import com.example.managementsystem.model.entity.Manager;
+import com.example.managementsystem.model.request.SaveManagerRequest;
+import com.example.managementsystem.model.response.ManagerResponse;
 import com.example.managementsystem.repository.EmployeeRepository;
 import com.example.managementsystem.repository.ManagerRepository;
-import com.example.managementsystem.service.EmployeeService;
 import com.example.managementsystem.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,7 +61,7 @@ public class ManagerSericeImpl implements ManagerService {
     }
 
     @Transactional
-    public Manager addEmployeeToManager(Long managerId, Long employeeId){
+    public Manager addEmployeeToManager(Long managerId, Long employeeId) {
         Manager existingManager = managerRepository.findById(managerId).orElseThrow(() ->
                 objectNotFound(managerId));
         Employee existingEmployee = employeeRepository.findById(employeeId).orElseThrow(() ->

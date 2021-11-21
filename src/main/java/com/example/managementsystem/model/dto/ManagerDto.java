@@ -1,6 +1,6 @@
-package com.example.managementsystem.entity.dto;
+package com.example.managementsystem.model.dto;
 
-import com.example.managementsystem.entity.Manager;
+import com.example.managementsystem.model.entity.Manager;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class ManagerDto {
     private String name;
     private List<EmployeeDto> employeeDtoList = new ArrayList<>();
 
-    public static ManagerDto printManagerFromDb(Manager manager){
+    public static ManagerDto printManagerFromDb(Manager manager) {
         ManagerDto managerDto = new ManagerDto();
         managerDto.setId(manager.getId());
         managerDto.setName(manager.getName());

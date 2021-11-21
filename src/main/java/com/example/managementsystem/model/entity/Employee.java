@@ -1,4 +1,4 @@
-package com.example.managementsystem.entity;
+package com.example.managementsystem.model.entity;
 
 
 import javax.persistence.*;

@@ -1,6 +1,6 @@
-package com.example.managementsystem.entity.dto;
+package com.example.managementsystem.model.dto;
 
-import com.example.managementsystem.entity.Employee;
+import com.example.managementsystem.model.entity.Employee;
 import lombok.Data;
 
 import java.util.Objects;
@@ -13,13 +13,13 @@ public class EmployeeDto {
     private String email;
     private PlainManagerDto plainManagerDto;
 
-    public static EmployeeDto printEmployee(Employee employee){
+    public static EmployeeDto printEmployee(Employee employee) {
         EmployeeDto employeeDto = new EmployeeDto();
         employeeDto.setId(employee.getId());
         employeeDto.setEmail(employee.getEmail());
         employeeDto.setFirstName(employee.getFirstName());
         employeeDto.setLastName(employee.getLastName());
-        if(Objects.nonNull(employee.getManager())){
+        if (Objects.nonNull(employee.getManager())) {
             employeeDto.setPlainManagerDto(PlainManagerDto.printSimpleManager(employee.getManager()));
         }
         return employeeDto;

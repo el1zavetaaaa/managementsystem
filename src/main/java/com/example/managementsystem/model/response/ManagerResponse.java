@@ -1,4 +1,6 @@
-package com.example.managementsystem.entity;
+package com.example.managementsystem.model.response;
+
+import com.example.managementsystem.model.entity.Manager;
 
 public record ManagerResponse(Long id, String name) {
 
