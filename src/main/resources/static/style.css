@@ -1,0 +1,42 @@
+TABLE {
+    width: 100%;
+    border: 1px outset black;
+}
+
+#col1 {
+    width: 12%;
+    background: lightblue;
+    text-align: center;
+
+}
+
+#col2 {
+    width: 12%;
+    background: lightcoral;
+    text-align: center;
+}
+
+
+#col1, #col2{
+    vertical-align: top;
+    padding: 5px;
+}
+
+.control-btn {
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.commonHiddenDiv {
+    overflow: hidden;
+
+}
+
+.commonDiv {
+    width: 100%;
+}
+

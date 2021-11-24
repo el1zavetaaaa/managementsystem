@@ -14,3 +14,4 @@ create table managers
     id   bigserial primary key,
     name text not null
 );
+
