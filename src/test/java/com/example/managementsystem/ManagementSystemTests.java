@@ -48,7 +48,7 @@ class ManagementSystemTests {
         assertNotNull(responseBody);
         assertEquals(name, responseBody.name());
         assertNotNull(responseBody.id());
-        log.info("Test manager with name {} was successfully created!",name);
+        log.info("Test manager with name {} was successfully created!", name);
     }
 
 
@@ -100,7 +100,7 @@ class ManagementSystemTests {
         assertEquals(updatedName, responseBody.name());
         assertEquals(id, responseBody.id());
 
-        log.info("Test Manager was successfully updated! His/Her new name is {}!",updatedName);
+        log.info("Test Manager was successfully updated! His/Her new name is {}!", updatedName);
     }
 
     @Test
@@ -129,7 +129,7 @@ class ManagementSystemTests {
         assertEquals(HttpStatus.NOT_FOUND, rest
                 .exchange(RequestEntity.delete(managerUrl).build(), ManagerResponse.class)
                 .getStatusCode());
-        log.warn("Test Manager with id {} was deleted.",id);
+        log.warn("Test Manager with id {} was deleted.", id);
     }
 
     @Test
@@ -148,7 +148,7 @@ class ManagementSystemTests {
         assertEquals(lastName, responseBody.lastName());
         assertEquals(email, responseBody.email());
         assertNotNull(responseBody.id());
-        log.info("Test Employee with email {} was successfully created!",email);
+        log.info("Test Employee with email {} was successfully created!", email);
     }
 
     @Test
@@ -209,7 +209,7 @@ class ManagementSystemTests {
         assertEquals(updatedEmail, responseBody.email());
         assertEquals(id, responseBody.id());
 
-        log.info("Test Employee was successfully updated! His/her new email is {}!",email);
+        log.info("Test Employee was successfully updated! His/her new email is {}!", email);
     }
 
     @Test
@@ -243,7 +243,7 @@ class ManagementSystemTests {
                 .exchange(RequestEntity.delete(employeeUrl).build(), EmployeeResponse.class)
                 .getStatusCode());
 
-        log.warn("Test Employee with id {} was deleted",id);
+        log.warn("Test Employee with id {} was deleted", id);
     }
 
     private ResponseEntity<ManagerResponse> createManager(String name) {

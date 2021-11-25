@@ -78,7 +78,7 @@ public class ManagerSericeImpl implements ManagerService {
         Employee existingEmployee = employeeRepository.findById(employeeId).orElseThrow(() ->
                 objectNotFound(employeeId));
         existingManager.removeEmployee(existingEmployee);
-        return null;
+        return existingManager;
     }
 
 }

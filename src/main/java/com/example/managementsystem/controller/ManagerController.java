@@ -35,7 +35,7 @@ public class ManagerController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ManagerResponse createAndSaveManager(@Valid @RequestBody SaveManagerRequest request) {
-        log.info("Manager wit name {} was successfully created!",request.name());
+        log.info("Manager wit name {} was successfully created!", request.name());
         return managerService.saveManager(request);
     }
 
@@ -61,24 +61,24 @@ public class ManagerController {
 
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ManagerResponse deleteManager(@PathVariable("id") Long id) {
-        log.warn("Manager with id {} was deleted.",id);
+        log.warn("Manager with id {} was deleted.", id);
         return managerService.deleteManager(id).orElseThrow(() -> objectNotFound(id));
     }
 
-    @PostMapping(value = "/{managerId}/employees/{emploeeId}/add")
-    public ResponseEntity<ManagerDto> addItemToCart(@PathVariable final Long managerId,
-                                                    @PathVariable final Long emploeeId) {
-        Manager manager = managerService.addEmployeeToManager(managerId, emploeeId);
+    @PostMapping(value = "/{managerId}/employees/{employeeId}/add")
+    public ResponseEntity<ManagerDto> addEmployeeToManager(@PathVariable final Long managerId,
+                                                           @PathVariable final Long employeeId) {
+        Manager manager = managerService.addEmployeeToManager(managerId, employeeId);
         log.info("New employee with id {} was added to manager with id {} and name {}",
-                emploeeId, managerId , manager.getName());
+                employeeId, managerId, manager.getName());
         return new ResponseEntity<>(ManagerDto.printManagerFromDb(manager), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/{managerId}/employees/{emploeeId}/remove")
+    @DeleteMapping(value = "/{managerId}/employees/{employeeId}/remove")
     public void removeEmployeeFromManager(@PathVariable final Long managerId,
-                                          @PathVariable final Long emploeeId) {
-        Manager manager = managerService.removeEmployee(managerId, emploeeId);
+                                          @PathVariable final Long employeeId) {
+        Manager manager = managerService.removeEmployee(managerId, employeeId);
         log.warn("Employee with id {} was removed from manager with id {} and name {}.",
-                emploeeId, managerId, manager.getName());
+                employeeId, managerId, manager.getName());
     }
 }

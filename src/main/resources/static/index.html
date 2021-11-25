@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,33 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Final project for NIX Solutions!</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"/>
 </head>
 
 <script src="script.js"></script>
 <body>
 <div class="commonHiddenDiv">
     <div class="commonDiv">
-<div style="float: left; width: 50%; height: 100%;" id="managersinfo"></div>
-<div style="float: left; width: 50%; height: 100%;" id="employeesinfo"></div>
+        <div style="float: left; width: 50%; height: 100%;" id="managersinfo"></div>
+        <div style="float: left; width: 50%; height: 100%;" id="employeesinfo"></div>
     </div>
 </div>
 
 <div class="container" style="float: left; width: 50%; height: 100%;">
-<input  id="managername" name="managername" type="text" placeholder="enter manager's name">
-    <input  type="text"  id="managerid" hidden>
-<button class="control-btn" id="LoginBtnForManager">submit</button>
+    <input id="managername" name="managername" type="text" placeholder="enter manager's name">
+    <input type="text" id="managerid" hidden>
+    <button class="control-btn" id="LoginBtnForManager">submit</button>
 </div>
 
 <div class="container" style="float: left; width: 50%; height: 100%;">
-<input  id="employeefirstname" name="employeefirstname" type="text" placeholder="enter employee's first name">
-<input  id="employeelastname" name="employeelastname" type="text" placeholder="enter employee's last name">
-<input  id="employeeemail" name="employeeemail" type="text" placeholder="enter employee's email">
-    <input  type="text"  id="employeeid" hidden>
-<button class="control-btn" id="LoginBtnForEmployee">submit</button>
+    <input id="employeefirstname" name="employeefirstname" type="text" placeholder="enter employee's first name">
+    <input id="employeelastname" name="employeelastname" type="text" placeholder="enter employee's last name">
+    <input id="employeeemail" name="employeeemail" type="text" placeholder="enter employee's email">
+    <input type="text" id="employeeid" hidden>
+    <button class="control-btn" id="LoginBtnForEmployee">submit</button>
 </div>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
 <script>
@@ -102,7 +101,6 @@
             }
         })
     })
-
 
 
 </script>

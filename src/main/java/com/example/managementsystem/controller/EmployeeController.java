@@ -36,7 +36,7 @@ public class EmployeeController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public EmployeeResponse createAndSaveEmployee(@RequestBody SaveEmployeeRequest request) {
         log.info("Employee with first name {}, last name {} and email {} was successfully created!",
-                request.firstName(),request.lastName(),request.email());
+                request.firstName(), request.lastName(), request.email());
         return employeeService.saveEmployee(request);
     }
 
@@ -57,13 +57,13 @@ public class EmployeeController {
     public void updateEmployee(@PathVariable("id") Long id,
                                @Valid @RequestBody SaveEmployeeRequest request) {
         log.info("Employee with id {} was successfully updated! Now his/her new first name is {}, last name is {}, email is {}!",
-                id,request.firstName(),request.lastName(),request.email());
+                id, request.firstName(), request.lastName(), request.email());
         employeeService.updateEmployee(id, request);
     }
 
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public EmployeeResponse deleteEmployee(@PathVariable("id") Long id) {
-        log.warn("Employee with id {} was deleted.",id);
+        log.warn("Employee with id {} was deleted.", id);
         return employeeService.deleteEmployee(id).orElseThrow(() -> objectNotFound(id));
     }
 

@@ -5,7 +5,7 @@ TABLE {
 
 #col1 {
     width: 12%;
-    background: lightblue;
+    background: #B0C4DE;
     text-align: center;
 
 }
@@ -17,7 +17,7 @@ TABLE {
 }
 
 
-#col1, #col2{
+#col1, #col2 {
     vertical-align: top;
     padding: 5px;
 }
