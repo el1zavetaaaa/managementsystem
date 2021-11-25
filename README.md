@@ -6,7 +6,7 @@ This is a management sysytem.
 - create employees;
 - add managers to employees.
 
-![Screenshot](1.png)
+![Screenshot](swagger.png)
 
 # Swagger UI:
 Use Swagger UI to test all abilities of management system.
