@@ -14,4 +14,4 @@ This is a management sysytem.
 Use Swagger UI to test all abilities of management system.
 
 [product-screenshot1]: images/swagger.png
-[product-screenshot2]: images/myCRUDUI.png
+[product-screenshot2]: images/crudUI.png
