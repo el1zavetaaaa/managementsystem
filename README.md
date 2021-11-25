@@ -6,8 +6,8 @@ This is a management sysytem.
 - create employees;
 - add managers to employees.
 
-[![Product Name Screen Shot][product-screenshot1]]
-[![Product Name Screen Shot][product-screenshot2]]
+[![Product Name Screen Shot][product-screenshot1].
+[![Product Name Screen Shot][product-screenshot2].
 
 
 # Swagger UI:
