@@ -33,6 +33,7 @@
     <input type="text" id="employeeid" hidden>
     <button class="control-btn" id="LoginBtnForEmployee">submit</button>
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
 <script>
@@ -73,7 +74,7 @@
         var employee = {};
         var dynamicURL = "";
         var methodName = "";
-        loadManagers();
+        loadEmployees();
         employee.firstName = $('#employeefirstname').val();
         employee.lastName = $('#employeelastname').val();
         employee.email = $('#employeeemail').val();
@@ -101,8 +102,6 @@
             }
         })
     })
-
-
 </script>
 </body>
 </html>
