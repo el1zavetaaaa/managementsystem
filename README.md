@@ -1,5 +1,5 @@
 # Management system
-This is a management sysytem.
+This is a management system.
 
 # Here you can:
 
