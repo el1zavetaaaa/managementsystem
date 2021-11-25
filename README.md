@@ -6,9 +6,10 @@ This is a management sysytem.
 - create employees;
 - add managers to employees.
 
-![Screenshot](swagger.png)
+[![Product Name Screen Shot][product-screenshot1]]
 
 # Swagger UI:
 Use Swagger UI to test all abilities of management system.
 
-
+[product-screenshot1]: images/swagger.png
+[product-screenshot2]: images/scr.png
