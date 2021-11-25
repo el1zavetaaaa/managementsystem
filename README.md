@@ -22,7 +22,6 @@ Use UI, which was written by me, to test CRUD operations.
 
 
 ![Product Name Screen Shot][product-myOwnUI]
-
 # To start the project you need:
 
 - build project with maven: mvn package;
